@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
             const category = event.target.getAttribute('data-category');
+            console.log(category)
             // Fetch headlines for the clicked category
             fetchHeadlines(category);
         });
