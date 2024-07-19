@@ -18,14 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
             fetchHeadlines(category);
         });
     });
+    // Add click event listener to the search button
+    document.getElementById('search-button').addEventListener('click', () => {
+        const query = document.getElementById('search-input').value;
+        // Fetch headlines based on the search query
+        fetchHeadlines(null, query);
+    });
 });
 
 /**
- * Fetches and displays headlines based on the specified category.
+ * Fetches and displays headlines based on the specified category or search query.
  * @param {string} category - The category of news to fetch. Defaults to 'general'.
+ * @param {string} query - The search query for fetching specific articles.
  */
-function fetchHeadlines(category = 'general') {
-    const url = `${baseUrl}&category=${category}`;
+function fetchHeadlines(category = 'general', query = '') {
+    let url = `${baseUrl}&category=${category}`;
+    if (query) {
+        url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`;
+    }
     
     fetch(url)
         .then(response => response.json())
