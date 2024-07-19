@@ -16,10 +16,10 @@
     </header>
 
     <!-- Sub-header -->
-    <nav class="bg-gray-200 p-2">
+    <nav class="bg-gray-200 p-4 m-2 rounded-md">
         <ul class="flex justify-around">
             <li><a href="#" class="text-gray-700 hover:text-blue-500">Home</a></li>
-            <li><a href="#" class="text-gray-700 hover:text-blue-500">World</a></li>
+            <li><a href="#" class="text-gray-700 hover:text-blue-500">General</a></li>
             <li><a href="#" class="text-gray-700 hover:text-blue-500">Politics</a></li>
             <li><a href="#" class="text-gray-700 hover:text-blue-500">Business</a></li>
             <li><a href="#" class="text-gray-700 hover:text-blue-500">Technology</a></li>
@@ -29,6 +29,25 @@
         </ul>
     </nav>
 
+    <div id="headlines" class="bg-white p-6 rounded-md shadow-md mt-6 mx-auto max-w-4xl">
+        <h2 class="text-xl font-bold mb-4">Top Headlines</h2>
+        <ul id="headline-list" class="space-y-4 list-disc list-inside">
+            <!-- headlines to be listed here -->
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 SA News Hub. All rights reserved.</p>
+            <p>Follow us on 
+                <a href="#" class="text-blue-400 hover:underline">Twitter</a>, 
+                <a href="#" class="text-blue-400 hover:underline">Facebook</a>, and 
+                <a href="#" class="text-blue-400 hover:underline">Instagram</a>.
+            </p>
+        </div>
+    </footer>
+    
     <script type="module" src="main.js"></script>
 </body>
 </html>
