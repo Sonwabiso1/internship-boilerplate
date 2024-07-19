@@ -1,20 +1,28 @@
 import './style.css';
 
+// News API base URL and API key
 const apiKey = '2b939a9e1bc94029add973cc786c3d86';
 const baseUrl = 'https://newsapi.org/v2/top-headlines?country=za&apiKey=' + apiKey;
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Fetch headlines for the default category on page load
     fetchHeadlines();
 
+    // Add click event listeners to all category links
     document.querySelectorAll('.category-link').forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
             const category = event.target.getAttribute('data-category');
+            // Fetch headlines for the clicked category
             fetchHeadlines(category);
         });
     });
 });
 
+/**
+ * Fetches and displays headlines based on the specified category.
+ * @param {string} category - The category of news to fetch. Defaults to 'general'.
+ */
 function fetchHeadlines(category = 'general') {
     const url = `${baseUrl}&category=${category}`;
     
